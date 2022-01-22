@@ -19,4 +19,6 @@ Stretch Goals (Gals):
 
 Wireframe:
 
-ERD:
+ERD & RESTful Routes:
+
+
