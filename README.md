@@ -20,5 +20,6 @@ Stretch Goals (Gals):
 Wireframe:
 
 ERD & RESTful Routes:
+![ERD Restful](https://files.slack.com/files-pri/T0351JZQ0-F02V6933D27/image.png)
 
 
