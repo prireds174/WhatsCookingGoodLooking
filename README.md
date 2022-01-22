@@ -20,5 +20,5 @@ Stretch Goals (Gals):
 Wireframe:
 
 ERD & RESTful Routes:
-![ERD Restful]
+![ERD Restful](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/image%20(1).png)
 
