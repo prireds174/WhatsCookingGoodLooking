@@ -11,7 +11,7 @@ I'm a person who just got home from a long day and don't want to be anywhere oth
 MVP Goals:
 Build an app that will take user's ingredient input and return a recipe from those ingredients.
 Allow the user to upload their own recipe as well.
-Hello （￣︶￣）↗　
+Hello
 
 Stretch Goals (Gals):
   3rd Party API integration 
