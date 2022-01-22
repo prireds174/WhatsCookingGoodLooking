@@ -1,5 +1,5 @@
 # WhatsCookingGoodLooking
-Secondary Possible Name: Cucina Simplistica
+Secondary Possible Name: Cucina Simplistica,easyPEAsy
 
 Description:
 
