@@ -4,11 +4,11 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
-const Recipe = require('./model/recipes')
+const Recipe = require('./models/recipes')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const URI = "mongodb://127.0.0.1:27017/easypeasy"
-mongoose.connect(URI, {}, ()=> console.log("mongoose connected!" +URI))
+mongoose.connect(URI, {}, () => console.log("mongoose connected!" + URI))
 
 
 // ============================================
@@ -23,7 +23,7 @@ app.use('/views', express.static('views'))
 // ============================================
 //                   MIDDLEWARE
 // ============================================
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 // ============================================
@@ -31,8 +31,8 @@ app.use(methodOverride('_method'))
 // ============================================
 
 // ***************Index*Route*********************
-app.get('/easypeasy', (req,res)=> {
-    Recipe.find({}, (err, foundRecipe)=>{
+app.get('/easypeasy', (req, res) => {
+    Recipe.find({}, (err, foundRecipe) => {
         console.log(foundRecipe)
         res.render('index.ejs', {
             recipes: foundRecipe
@@ -42,50 +42,71 @@ app.get('/easypeasy', (req,res)=> {
 })
 
 
+
+
+
 // ***************Home*Route*********************
 
 // ***************New*Route*********************
-app.get('/easypeasy/new', (req,res)=>{
+app.get('/easypeasy/new', (req, res) => {
     //res.send('our new recipes!!!🥗')
     res.render('new.ejs')
 })
 
 // ***************Show*Route*********************
-app.get('/easypeasy/:id', (req,res)=>{
+app.get('/easypeasy/:id', (req, res) => {
+    const id = req.params.id
+    Recipe.findById(req.params.id, (err, foundRecipe) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.render("show.ejs", { recipe: foundRecipe })
+        }
+    })
     //res.send('show my recipes')
     //console.log('show my recipes')
-    res.render("show.ejs")
+    //res.render("show.ejs")
 })
 
 // ***************Edit*Route*********************
-app.get('/easypeasy/:id/edit', (req,res)=>{
-    res.send('edit my recipes!!')
+app.get('/easypeasy/:id/edit', (req, res) => {
+    Recipe.findById(req.params.id, (err, recipeToEdit) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.render("edit.ejs", {
+                recipe: recipeToEdit,
+            });
+        }
+    })
+    //res.send('edit my recipes!!')
 })
 
 // ***************Create*Route*********************
-app.post('/easypeasy', (req,res)=>{
+app.post('/easypeasy', (req, res) => {
     //res.send('Create new recipe!')
-    Recipe.create(req.body,(err, createdRecipe)=>{
-        console.log(err)
+    Recipe.create(req.body, (err, createdRecipe) => {
         res.redirect('/easypeasy')
+        console.log(err)
+        
     })
-    
+
 })
 
 // ***************Update*Route*********************
-app.put('/easypeasy/:id', (req,res)=> {
+app.put('/easypeasy/:id', (req, res) => {
     // res.send('Update our new recipe!!')
-    Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedRecipe)=> {
-        if(err) {
-            return res.send(err)
+    Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
+        if (err) {
+            res.send(err)
         }
         console.log(updatedRecipe)
-        res.redirect('/easypeasy'+req.params.id)
+        res.redirect(`/easypeasy/${updatedRecipe.id}`);
     })
 })
 
 // ***************Delete*Route*********************
-app.delete('/easypeasy/:id', (req,res)=>{
+app.delete('/easypeasy/:id', (req, res) => {
     res.send("Delete our recipe!")
 })
 
