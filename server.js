@@ -60,8 +60,8 @@ app.get('/easypeasy/:id/edit', (req,res)=>{
 app.post('/easypeasy', (req,res)=>{
     //res.send('Create new recipe!')
     Recipe.create(req.body,(err, createdRecipe)=>{
-        res.redirect('/easypeasy')
         console.log(err)
+        res.redirect('/easypeasy')
     })
     
 })
