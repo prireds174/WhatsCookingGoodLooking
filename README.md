@@ -22,7 +22,11 @@ Stretch Goals (Gals):
   Smart Device Integration
 
 Wireframe:
-
+![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212354.png)
+![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212443.png)
+![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212514.png)
+![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212638.png)
+![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212708.png)
 
 ERD & RESTful Routes:
 ![ERD Restful](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/image%20(1).png)
