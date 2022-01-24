@@ -14,7 +14,7 @@ MVP Goals:
 Build an app that will take user's ingredient input and return a recipe from those ingredients.
 Allow the user to upload their own recipe as well.
 
-Stretch Goals (Gals):
+Stretch Goals:
 
   3rd Party API integration 
   Suggestion feature based on liked recipes
