@@ -1,5 +1,5 @@
 # easyPEAsy
-Attitude: What's Cooking Good Looking!
+What's Cooking Good Looking!
 
 ## Description:
 
