@@ -1,5 +1,5 @@
-# WhatsCookingGoodLooking
-App Name: easyPEAsy
+# easyPEAsy
+Attitude: What's Cooking Good Looking!
 
 ## Description:
 
