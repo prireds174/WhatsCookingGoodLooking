@@ -29,5 +29,5 @@ Allow the user to upload their own recipe as well.
 ![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212708.png)
 
 ## ERD & RESTful Routes:
-![ERD Restful](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/image%20(1).png)
+![ERD Restful](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/image%20(2).png)
 
