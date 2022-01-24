@@ -7,10 +7,18 @@
     <title>EasyPEAsy Recipe List</title>
 </head>
 <body>
-    <% for (let i=0; i< recipe.length; i++){%>
+    <h1>Recipe Index</h1>
+    <a href="/easypeasy/new"> Plug new recipes!</a>
+    <div>
+        <ul>
+            <li>
 
-    <h1><%=recipe[i].name%></h1>
-    <%} %>
+                <% for (let i=0; i< recipes.length; i++){%>
+                    <a href="/easypeasy/<%=recipes[i]._id%>"><%=recipes[i].name%></a>
+                <%} %>
+            </li>
+        </ul>
+    </div>
     
 </body>
 </html>
