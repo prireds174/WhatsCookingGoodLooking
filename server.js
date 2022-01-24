@@ -5,6 +5,7 @@ const { application } = require('express')
 const express = require('express')
 const app = express()
 const PORT = 8000
+const Recipe = require("./models/recipes")
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const URI = "mongodb://127.0.0.1:27017/easypeasy"
@@ -40,13 +41,15 @@ app.get('/easypeasy', (req,res)=> {
 
 // ***************New*Route*********************
 app.get('/easypeasy/new', (req,res)=>{
-    res.send('our new recipes!!!🥗')
+    //res.send('our new recipes!!!🥗')
+    res.render('new.ejs')
 })
 
 // ***************Show*Route*********************
 app.get('/easypeasy/:id', (req,res)=>{
-    res.send('show my recipes')
-    console.log('show my recipes')
+    //res.send('show my recipes')
+    //console.log('show my recipes')
+    res.render("show.ejs")
 })
 
 // ***************Edit*Route*********************
@@ -56,7 +59,12 @@ app.get('/easypeasy/:id/edit', (req,res)=>{
 
 // ***************Create*Route*********************
 app.post('/easypeasy', (req,res)=>{
-    res.send('Create new recipe!')
+    //res.send('Create new recipe!')
+    Recipe.create(req.body,(err, createdRecipe)=>{
+        res.redirect('/easypeasy')
+        console.log(err)
+    })
+    
 })
 
 // ***************Update*Route*********************
@@ -71,3 +79,5 @@ app.delete('/easypeasy/:id', (req,res)=>{
 
 // ***************Start*Server*******************
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+
+module.exports = Recipe
