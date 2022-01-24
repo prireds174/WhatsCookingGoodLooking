@@ -1,6 +1,7 @@
 // ============================================
 //                   DEPENDENCIES
 // ============================================
+const { application } = require('express')
 const express = require('express')
 const app = express()
 const PORT = 8000
@@ -29,13 +30,44 @@ app.use(methodOverride('_method'))
 //                   7 "RESTful" routes 
 // ============================================
 
+// ***************Index*Route*********************
+app.get('/easypeasy', (req,res)=> {
+    res.send('easypeasy right?')
+})
 
 
 // ***************Home*Route*********************
 
+// ***************New*Route*********************
+app.get('/easypeasy/new', (req,res)=>{
+    res.send('our new recipes!!!🥗')
+})
 
+// ***************Show*Route*********************
+app.get('/easypeasy/:id', (req,res)=>{
+    res.send('show my recipes')
+    console.log('show my recipes')
+})
 
+// ***************Edit*Route*********************
+app.get('/easypeasy/:id/edit', (req,res)=>{
+    res.send('edit my recipes!!')
+})
 
+// ***************Create*Route*********************
+app.post('/easypeasy', (req,res)=>{
+    res.send('Create new recipe!')
+})
+
+// ***************Update*Route*********************
+app.put('/easypeasy/:id', (req,res)=> {
+    res.send('Update our new recipe!!')
+})
+
+// ***************Delete*Route*********************
+app.delete('/easypeasy/:id', (req,res)=>{
+    res.send("Delete our recipe!")
+})
 
 // ***************Start*Server*******************
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
