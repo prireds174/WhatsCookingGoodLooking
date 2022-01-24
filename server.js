@@ -32,7 +32,13 @@ app.use(methodOverride('_method'))
 
 // ***************Index*Route*********************
 app.get('/easypeasy', (req,res)=> {
-    res.send('easypeasy right?')
+    Recipe.find({}, (err, foundRecipe)=>{
+        console.log(foundRecipe)
+        res.render('index.ejs', {
+            recipes: foundRecipe
+        })
+    })
+    // res.send('easypeasy right?')
 })
 
 
@@ -71,7 +77,14 @@ app.post('/easypeasy', (req,res)=>{
 
 // ***************Update*Route*********************
 app.put('/easypeasy/:id', (req,res)=> {
-    res.send('Update our new recipe!!')
+    // res.send('Update our new recipe!!')
+    Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedRecipe)=> {
+        if(err) {
+            return res.send(err)
+        }
+        console.log(updatedRecipe)
+        res.redirect('/easypeasy'+req.params.id)
+    })
 })
 
 // ***************Delete*Route*********************
