@@ -16,10 +16,10 @@ Allow the user to upload their own recipe as well.
 
 Stretch Goals:
 
-  3rd Party API integration 
-  Suggestion feature based on liked recipes
-  Review Feature for recipes
-  Smart Device Integration
+  -3rd Party API integration 
+  -Suggestion feature based on liked recipes
+  -Review Feature for recipes
+  -Smart Device Integration
 
 Wireframe:
 ![Wireframe](https://github.com/prireds174/WhatsCookingGoodLooking/blob/main/Wireframe/Screenshot%202022-01-23%20212354.png)
