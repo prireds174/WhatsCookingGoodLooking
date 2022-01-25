@@ -107,7 +107,11 @@ app.put('/easypeasy/:id', (req, res) => {
 
 // ***************Delete*Route*********************
 app.delete('/easypeasy/:id', (req, res) => {
-    res.send("Delete our recipe!")
+    const deleteRecipe = (err, deleteMsg)=>{
+        console.log(deleteMsg)
+        res.redirect('/easypeasy')
+    }
+    Recipe.findByIdAndDelete(req.params.id, deleteRecipe)
 })
 
 // ***************Start*Server*******************
