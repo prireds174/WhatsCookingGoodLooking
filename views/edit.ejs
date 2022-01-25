@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -13,17 +14,18 @@
     <form method="POST" action="/easypeasy/<%=recipe._id%>?_method=PUT">
         <p>Name of the Dish:</p>
         <input type="text" name="name" placeholder="enter name here">
-        <p>Ingredients? </p>
+        <p>Ingredients </p>
         <input type="text" name="ingredients" placeholder="enter ingredient here">
-        <p>How many minutes does it take to cook? </p>
+        <p>Cook Time </p>
         <input type="text" name="totalTime" placeholder="enter total time here">
-        <p>EasyPEAsy Chef's Instructions ?</p>
-        <textarea rows="6" cols="60" id="recipeInstruction" name="instructions" placeholder="enter your instructions"></textarea>
+        <p>Instructions</p>
+        <textarea rows="6" cols="60" id="recipeInstruction" name="instructions"
+            placeholder="enter your instructions"></textarea>
         <br>
         <input type="submit" value="Edit Recipe">
     </form>
     <form action="/easypeasy/<%= recipe._id %>?_method=Delete" method="POST">
-        <input type="submit" value="Delete Recipe <%= recipe.name %>">
+        <input type="submit" value="Delete Recipe">
     </form>
     <a href="/easypeasy">Recipe Index</a>
 

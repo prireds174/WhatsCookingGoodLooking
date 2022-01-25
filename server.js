@@ -23,8 +23,10 @@ app.use('/views', express.static('views'))
 // ============================================
 //                   MIDDLEWARE
 // ============================================
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
+
 
 // ============================================
 //                   7 "RESTful" routes 
@@ -88,7 +90,7 @@ app.post('/easypeasy', (req, res) => {
     Recipe.create(req.body, (err, createdRecipe) => {
         res.redirect('/easypeasy')
         console.log(err)
-        
+
     })
 
 })
@@ -107,7 +109,7 @@ app.put('/easypeasy/:id', (req, res) => {
 
 // ***************Delete*Route*********************
 app.delete('/easypeasy/:id', (req, res) => {
-    const deleteRecipe = (err, deleteMsg)=>{
+    const deleteRecipe = (err, deleteMsg) => {
         console.log(deleteMsg)
         res.redirect('/easypeasy')
     }
