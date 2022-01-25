@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 const recipeSchema = new mongoose.Schema({
     name: {
-        type: String, requrie: true, default: "untitled"
+        type: String, require: true, default: "untitled"
     },
     ingredients: [String],
     totalTime: {
-        type: Number //minutes
+        type: [String] //minutes
     },
     instructions: {
         type: [String]
