@@ -4,7 +4,8 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
-const Recipe = require('./models/recipes')
+//const Recipe = require('./models/recipes')
+const Recipes = require('./models/testrecipe')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const URI = "mongodb://127.0.0.1:27017/easypeasy"
@@ -34,7 +35,7 @@ app.use(methodOverride('_method'))
 
 // ***************Index*Route*********************
 app.get('/easypeasy', (req, res) => {
-    Recipe.find({}, (err, foundRecipe) => {
+    Recipes.find({}, (err, foundRecipe) => {
         console.log(foundRecipe)
         res.render('index.ejs', {
             recipes: foundRecipe
@@ -58,7 +59,7 @@ app.get('/easypeasy/new', (req, res) => {
 // ***************Show*Route*********************
 app.get('/easypeasy/:id', (req, res) => {
     const id = req.params.id
-    Recipe.findById(req.params.id, (err, foundRecipe) => {
+    Recipes.findById(req.params.id, (err, foundRecipe) => {
         if (err) {
             res.send(err)
         } else {
@@ -72,7 +73,7 @@ app.get('/easypeasy/:id', (req, res) => {
 
 // ***************Edit*Route*********************
 app.get('/easypeasy/:id/edit', (req, res) => {
-    Recipe.findById(req.params.id, (err, recipeToEdit) => {
+    Recipes.findById(req.params.id, (err, recipeToEdit) => {
         if (err) {
             res.send(err)
         } else {
@@ -87,7 +88,7 @@ app.get('/easypeasy/:id/edit', (req, res) => {
 // ***************Create*Route*********************
 app.post('/easypeasy', (req, res) => {
     //res.send('Create new recipe!')
-    Recipe.create(req.body, (err, createdRecipe) => {
+    Recipes.create(req.body, (err, createdRecipe) => {
         res.redirect('/easypeasy')
         console.log(err)
 
@@ -98,7 +99,7 @@ app.post('/easypeasy', (req, res) => {
 // ***************Update*Route*********************
 app.put('/easypeasy/:id', (req, res) => {
     // res.send('Update our new recipe!!')
-    Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
+    Recipes.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
         if (err) {
             res.send(err)
         }
@@ -113,10 +114,10 @@ app.delete('/easypeasy/:id', (req, res) => {
         console.log(deleteMsg)
         res.redirect('/easypeasy')
     }
-    Recipe.findByIdAndDelete(req.params.id, deleteRecipe)
+    Recipes.findByIdAndDelete(req.params.id, deleteRecipe)
 })
 
 // ***************Start*Server*******************
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
-module.exports = Recipe
+module.exports = Recipes
