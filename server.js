@@ -12,8 +12,8 @@ const mongoose = require('mongoose')
 const URI = "mongodb://127.0.0.1:27017/easypeasy"
 
 mongoose.connect(URI)
-mongoose.connection.on('connected',()=>{
-    console.log('connected to mongoDB: '+URI.split('/').pop())
+mongoose.connection.on('connected', () => {
+    console.log('connected to mongoDB: ' + URI.split('/').pop())
 })
 // mongoose.connect(URI, {}, () => console.log("mongoose connected!" + URI))
 
@@ -45,7 +45,7 @@ app.use('/easypeasy/recipe', recipesController)
 
 // ***************Home*Route*********************
 app.get('/easypeasy', (req, res) => {
-   res.render('home.ejs')
+    res.render('home.ejs')
 })
 
 // ***************Start*Server*******************

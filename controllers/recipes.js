@@ -3,7 +3,7 @@
 // ================================================
 const express = require('express');
 const router = express.Router();
-const Recipes = require('../models/Testrecipe');
+const Recipes = require('../models/testrecipe');
 
 
 // ================================================
@@ -73,11 +73,11 @@ router.put('/:id', (req, res) => {
 })
 // ***************Delete*Route*********************
 router.delete('/:id', (req, res) => {
-   const deleteRecipe = (err, deleteMsg) => {
-       console.log(deleteMsg)
-       res.redirect('/easypeasy/recipe')
-   }
-   Recipes.findByIdAndDelete({_id : req.params.id}, deleteRecipe)
+    const deleteRecipe = (err, deleteMsg) => {
+        console.log(deleteMsg)
+        res.redirect('/easypeasy/recipe')
+    }
+    Recipes.findByIdAndDelete({ _id: req.params.id }, deleteRecipe)
 })
 
 

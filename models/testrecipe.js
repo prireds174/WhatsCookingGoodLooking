@@ -37,7 +37,7 @@ function main() {
     Recipes.deleteMany({}, (err, deletedResponse) => {
         if(err) return console.log(err)
         // if(err) return res.send(err)
-        console.log(`${deletedResponse.deletedCount} number of companies have deleted.`)
+        console.log(`${deletedResponse.deletedCount} number of recipes have deleted.`)
 
         Recipes.create(priscilla, (err, createdRecipe)=> {
             if(err) return console.log(err)
