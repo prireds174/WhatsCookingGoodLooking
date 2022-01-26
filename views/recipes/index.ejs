@@ -10,20 +10,26 @@
 </head>
 
 <body>
+    <div class="topNav">
+        <a href="/easypeasy">Home</a>
+        <a href="/easypeasy/recipe">Index</a>
+        <a href="/easypeasy/recipe/new">Post Recipes</a>
+        <a href="#signUp">Sign-Up</a>
+    </div>
     <h1>Recipe Index</h1>
-    <a href="/easypeasy/new"> Plug new recipes!</a>
+    <a href="/easypeasy/recipe/new"> Plug new recipes!</a>
     <div>
         <ul>
             <li>
 
                 <% for (let i=0; i< recipes.length; i++){%>
-                    <a href="/easypeasy/<%=recipes[i]._id%>">
+                    <a href="/easypeasy/recipe/<%=recipes[i]._id%>">
                         <%=recipes[i].name%>
                     </a>
-                    <form action="/easypeasy/<%= recipes[i]._id %>?_method=Delete" method="POST">
+                    <form action="/easypeasy/recipe<%= recipes[i]._id %>?_method=DELETE" method="POST">
                         <input type="submit" value="Delete Recipe <%= recipes[i].name %>">
                     </form>
-                    <%} %>
+                <%} %>
             </li>
         </ul>
     </div>
