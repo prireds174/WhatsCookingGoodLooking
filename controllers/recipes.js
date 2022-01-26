@@ -72,7 +72,7 @@ router.put('/:id', (req, res) => {
     })
 })
 // ***************Delete*Route*********************
-router.delete('/:id', (req, res) => {
+router.delete('/:id/', (req, res) => {
    const deleteRecipe = (err, deleteMsg) => {
        console.log(deleteMsg)
        res.redirect('/easypeasy/recipe')
