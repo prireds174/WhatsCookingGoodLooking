@@ -3,8 +3,10 @@
 // ================================================
 const express = require('express');
 const router = express.Router();
-const Recipes = require('../models/Testrecipe');
 
+const Recipes = require('../models/Testrecipe');
+// const databaseFn = require('../models/Testrecipe')
+// const searchFn = require('../models/Testrecipe')
 
 // ================================================
 
@@ -19,6 +21,18 @@ router.get('/', (req, res) => {
     // res.send('easypeasy right?')
 })
 
+// ================================================
+// ***************Search*Route*********************
+router.get('/result', (req, res) => {
+    console.log("router get result page test!!!!!!!!!")
+    // res.send("Here's the result page!")
+    Recipes.find({}, (err, foundRecipe)=> {
+        console.log(foundRecipe)
+        res.render('recipes/result.ejs', { recipes: foundRecipe})
+    })
+
+})
+// ================================================
 // ***************New*Route************************
 router.get('/new', (req, res) => {
     //res.send('our new recipes!!!🥗')
@@ -79,6 +93,52 @@ router.delete('/:id/', (req, res) => {
    }
    Recipes.findByIdAndDelete({_id : req.params.id}, deleteRecipe)
 })
+
+// ================================================
+
+// ***************search*Route*********************
+router.post('/result', (req, res) => {
+    console.log("post result page!!!!!")
+    Recipes.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(foodName)
+            // res.send(foodName)
+        }
+    })
+    res.redirect('/easypeasy/recipe/result')
+        // {ingredients: { "$in" : ["Cheese"]}},
+    
+    // 1. make a mongoose query. 
+    // function search(x){
+    //     Recipes.find(
+    //         {ingredients: { "$in" : ["Cheese"] }},
+    //         "name", (err, foodName) => {
+    //         if(err) {
+    //             console.log(err)
+    //         } else { 
+    //             console.log(foodName)
+    //             res.redirect('/easypeasy/recipe/result')
+    //             // res.render('recipes/result.ejs' )
+    //             // res.send(foodName)
+                
+    //         }
+
+    //     })
+    // }
+})
+
+
+// function search(x) {
+//     // main()
+//     Recipes.find( 
+//         {ingredients: { "$in" : [x] }}, 
+//         "name", (err, docs) => {
+//         if(err) return console.log(err)
+//         console.log(docs)
+//     })
+// }
 
 
 module.exports = router;
