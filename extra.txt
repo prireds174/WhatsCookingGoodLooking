@@ -33,3 +33,19 @@ main()
         <a href="/easypeasy/recipe/new">Post Recipes</a>
         <a href="#signUp">Sign-Up</a>
     </div>
+
+       <nav class="navbar navbar-light" style="background-color: c7ffa9;">
+        <div class="container">
+            <div class="mx-auto" style="width: 500px;">
+                <form class="d-flex">
+                    <form action="/easypeasy/recipe/result" method="POST">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<input id="search" type="search" name="ingredients" placeholder="Recipe Search">
+            <button type="submit">🍽🍽🍽</button>

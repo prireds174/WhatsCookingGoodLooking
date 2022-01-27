@@ -24,13 +24,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/easypeasy">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/easypeasy">Search Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/easypeasy/recipe">Recipes</a>
+                        <a class="nav-link" href="/easypeasy/recipe">All Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/easypeasy/recipe/new">Post Recipe</a>
+                        <a class="nav-link" href="/easypeasy/recipe/new">Contribute</a>
                     </li>
                     <li class="nav-item">
                         <a class="#signUp">Sign-Up</a>
@@ -41,18 +41,32 @@
     </nav>
 
     <div class="homeHeader">
-        <h2>We make finding a recipe EasyPEAsy!</h2>
+        <h1>We make finding a recipe easyPEAsy</h1>
+        <h2>so lets see what you have in your pantry and find out whats cookin good lookin!</h2>
     </div>
-    <h1>We make finding a recipe EasyPEAsy!</h1>
+
+
     <div class="search-bar">
-        
+
         <form action="/easypeasy/recipe/result" method="POST">
-            <input id="search" type="search" name="ingredients" placeholder="Recipe Search">
-            <button type="submit">🍽🍽🍽</button>
+
+            <nav class="navbar navbar-light" style="background-color: none">
+                <div class="container mx-auto" style="width: 800px;">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
         </form>
     </div>
-    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
-
