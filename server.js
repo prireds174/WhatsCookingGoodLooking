@@ -9,7 +9,9 @@ const PORT = 8000
 // const Recipes = require('./models/Testrecipe')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+
 const URI = "mongodb://127.0.0.1:27017/easypeasy"
+
 
 mongoose.connect(URI)
 mongoose.connection.on('connected',()=>{
@@ -42,13 +44,16 @@ app.use(methodOverride('_method'))
 app.use('/easypeasy/recipe', recipesController)
 // ============================================
 
+// ==============================================
 
 // ***************Home*Route*********************
 app.get('/easypeasy', (req, res) => {
-   res.render('home.ejs')
+    
+    res.render('home.ejs')
 })
 
 // ***************Start*Server*******************
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 
+// module.exports = Recipes
