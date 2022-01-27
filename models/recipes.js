@@ -3,7 +3,9 @@ const recipeSchema = new mongoose.Schema({
     name: {
         type: String, require: true, default: "untitled"
     },
-    ingredients: [String],
+    ingredients: {
+        type: [String]
+    },
     totalTime: {
         type: [String] //minutes
     },

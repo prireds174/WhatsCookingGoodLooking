@@ -6,10 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/editstyle.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-light" style="background-color: #c7ffa9;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/easypeasy">
+                easyPEAsy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/easypeasy">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/easypeasy/recipe">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/easypeasy/recipe/new">Post Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="#signUp">Sign-Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h1>Edit Recipe</h1>
     <form method="POST" action="/easypeasy/recipe/<%=recipe._id%>?_method=PUT">
         <p>Name of the Dish:</p>
@@ -24,10 +53,15 @@
         <br>
         <input type="submit" value="Edit Recipe">
     </form>
+
     <form action="/easypeasy/recipe/<%= recipe._id %>?_method=Delete" method="POST">
         <input type="submit" value="Delete Recipe">
     </form>
     <a href="/easypeasy/recipe">Recipe Index</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 </body>
 

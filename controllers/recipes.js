@@ -72,12 +72,6 @@ router.put('/:id', (req, res) => {
     })
 })
 // ***************Delete*Route*********************
-router.delete('/:id', (req, res) => {
-    const deleteRecipe = (err, deleteMsg) => {
-        console.log(deleteMsg)
-        res.redirect('/easypeasy/recipe')
-    }
-    Recipes.findByIdAndDelete({ _id: req.params.id }, deleteRecipe)
 router.delete('/:id/', (req, res) => {
    const deleteRecipe = (err, deleteMsg) => {
        console.log(deleteMsg)
@@ -87,4 +81,4 @@ router.delete('/:id/', (req, res) => {
 })
 
 
-module.exports = router
+module.exports = router;

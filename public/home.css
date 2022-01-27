@@ -1,0 +1,21 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background-color: rgba(140, 216, 140, 0.872);
+    background-image: url(https://i.imgur.com/XP6oz9x.png);
+    background-position: 50% -40%;
+    background-repeat: no-repeat;
+    background-size: 350px;
+}
+
+h1{
+    text-align: center;
+}
+
+.homeHeader {
+    position: center;
+    padding-top: 20em;
+    text-align: center;
+}

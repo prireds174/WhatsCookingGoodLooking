@@ -28,7 +28,7 @@ app.use('/views', express.static('views'))
 // ============================================
 //                   MIDDLEWARE
 // ============================================
-app.use(express.static("public"));
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
