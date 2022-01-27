@@ -5,8 +5,6 @@ const express = require('express');
 const router = express.Router();
 
 const Recipes = require('../models/Testrecipe');
-// const databaseFn = require('../models/Testrecipe')
-// const searchFn = require('../models/Testrecipe')
 
 // ================================================
 
@@ -23,15 +21,6 @@ router.get('/', (req, res) => {
 
 // ================================================
 // ***************Search*Route*********************
-// router.get('/result', (req, res) => {
-//     console.log("router get result page test!!!!!!!!!")
-//     // res.send("Here's the result page!")
-//     console.log(req.query)
-//     Recipes.find({}, (err, foundRecipe)=> {
-//         console.log(foundRecipe)
-//         res.render('recipes/result.ejs', { recipes: foundRecipe})
-//     })
-// })
 router.get('/result', (req, res)=> {
     res.redirect('/easypeasy/')
 })
@@ -49,7 +38,9 @@ router.get('/:id', (req, res) => {
         if (err) {
             res.send(err)
         } else {
+            console.log(foundRecipe)
             res.render("recipes/show.ejs", { recipe: foundRecipe })
+            
         }
     })
 })
