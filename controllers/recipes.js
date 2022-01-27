@@ -23,15 +23,19 @@ router.get('/', (req, res) => {
 
 // ================================================
 // ***************Search*Route*********************
-router.get('/result', (req, res) => {
-    console.log("router get result page test!!!!!!!!!")
-    // res.send("Here's the result page!")
-    Recipes.find({}, (err, foundRecipe)=> {
-        console.log(foundRecipe)
-        res.render('recipes/result.ejs', { recipes: foundRecipe})
-    })
-
+// router.get('/result', (req, res) => {
+//     console.log("router get result page test!!!!!!!!!")
+//     // res.send("Here's the result page!")
+//     console.log(req.query)
+//     Recipes.find({}, (err, foundRecipe)=> {
+//         console.log(foundRecipe)
+//         res.render('recipes/result.ejs', { recipes: foundRecipe})
+//     })
+// })
+router.get('/result', (req, res)=> {
+    res.redirect('/easypeasy/')
 })
+
 // ================================================
 // ***************New*Route************************
 router.get('/new', (req, res) => {
@@ -104,10 +108,9 @@ router.post('/result', (req, res) => {
             console.log(err)
         } else {
             console.log(foodName)
-            // res.send(foodName)
+            res.render('recipes/result.ejs', {recipes: foodName})
         }
     })
-    res.redirect('/easypeasy/recipe/result')
 
 })
 
