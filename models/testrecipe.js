@@ -57,11 +57,3 @@ main()
 // search("Cheese")
 
 
-
-
-// router.post('/search', (req, res) => {
-//     // 1. make a mongoose query. 
-//     // 2. 
-// })
-
-

@@ -108,37 +108,8 @@ router.post('/result', (req, res) => {
         }
     })
     res.redirect('/easypeasy/recipe/result')
-        // {ingredients: { "$in" : ["Cheese"]}},
-    
-    // 1. make a mongoose query. 
-    // function search(x){
-    //     Recipes.find(
-    //         {ingredients: { "$in" : ["Cheese"] }},
-    //         "name", (err, foodName) => {
-    //         if(err) {
-    //             console.log(err)
-    //         } else { 
-    //             console.log(foodName)
-    //             res.redirect('/easypeasy/recipe/result')
-    //             // res.render('recipes/result.ejs' )
-    //             // res.send(foodName)
-                
-    //         }
 
-    //     })
-    // }
 })
-
-
-// function search(x) {
-//     // main()
-//     Recipes.find( 
-//         {ingredients: { "$in" : [x] }}, 
-//         "name", (err, docs) => {
-//         if(err) return console.log(err)
-//         console.log(docs)
-//     })
-// }
 
 
 module.exports = router;
