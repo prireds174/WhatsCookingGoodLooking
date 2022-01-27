@@ -23,6 +23,8 @@
             placeholder="enter your instructions"></textarea>
         <br>
         <input type="submit" value="Edit Recipe">
+        <p>Image:</p>
+        <input type="text" name="image" placeholder="enter image URL">
     </form>
     <form action="/easypeasy/recipe/<%= recipe._id %>?_method=Delete" method="POST">
         <input type="submit" value="Delete Recipe">

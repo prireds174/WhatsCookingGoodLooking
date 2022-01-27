@@ -31,7 +31,9 @@ router.get('/:id', (req, res) => {
         if (err) {
             res.send(err)
         } else {
+            console.log(foundRecipe)
             res.render("recipes/show.ejs", { recipe: foundRecipe })
+            
         }
     })
 })
