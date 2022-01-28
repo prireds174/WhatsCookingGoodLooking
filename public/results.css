@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color:  rgba(140, 216, 140, 0.872);
+}
+
+h1 {
+    text-align: center;
+}

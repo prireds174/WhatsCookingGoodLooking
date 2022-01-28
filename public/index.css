@@ -4,12 +4,69 @@
 
 body {
     background-color:  rgba(140, 216, 140, 0.872);
-    background-image: url(https://i.imgur.com/XP6oz9x.png);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 250px;
 }
 
 h1 {
+    padding: 25px;
     font-size: 45px;
+    text-align: center;
 }
+
+a.nav-link {
+    font-size: 15px;
+    padding: 25px;
+    color: black;
+}
+
+a.nav-link:visited{
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a.nav-link:hover{
+    color: rgba(133, 159, 49, 0.978)
+}
+
+a {
+    font-size: 35px;
+}
+
+
+ul.recipes {
+    list-style-type: none;
+}
+
+.create {
+    font-size: 15px;
+    padding: 15px;
+}
+
+.btn {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: rgb(255, 5, 5);
+  }
+
+  a:link {
+      color: white;
+      text-decoration: none;
+  }
+
+  a:visited {
+      color: rgba(132, 65, 107, 0.907)
+  }
+
+  a:hover {
+      color:rgba(133, 159, 49, 0.978)
+  }
+
+  a:active {
+      color:black
+  }

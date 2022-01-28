@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 // ================================================
 // ***************Search*Route*********************
-router.get('/result', (req, res)=> {
+router.get('/result', (req, res) => {
     res.redirect('/easypeasy/')
 })
 
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
         } else {
             console.log(foundRecipe)
             res.render("recipes/show.ejs", { recipe: foundRecipe })
-            
+
         }
     })
 })
@@ -94,12 +94,12 @@ router.delete('/:id/', (req, res) => {
 // ***************search*Route*********************
 router.post('/result', (req, res) => {
     console.log("post result page!!!!!")
-    Recipes.findById({ id: req.query.ingredients }, "name", (err, foodName) => {
+    Recipes.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
         if (err) {
             console.log(err)
         } else {
             console.log(foodName)
-            res.render('recipes/result.ejs', {recipes: foodName})
+            res.render('recipes/result.ejs', { recipes: foodName })
         }
     })
 

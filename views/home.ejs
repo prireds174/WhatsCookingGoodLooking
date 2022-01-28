@@ -15,7 +15,7 @@
     <nav class="navbar navbar-light" style="background-color: #c7ffa9;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/easypeasy">
-                easyPEAsy
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="/easypeasy/recipe">All Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/easypeasy/recipe/new">Contribute</a>
+                        <a class="nav-link" href="/easypeasy/recipe/new">Post Recipe</a>
                     </li>
                     <li class="nav-item">
                         <a class="#signUp">Sign-Up</a>
@@ -47,13 +47,12 @@
 
 
     <div class="search-bar">
-
         <form action="/easypeasy/recipe/result" method="POST">
 
             <nav class="navbar navbar-light" style="background-color: none">
                 <div class="container mx-auto" style="width: 800px;">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" name="ingredients" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>

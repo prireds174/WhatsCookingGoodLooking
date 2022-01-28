@@ -12,12 +12,12 @@ const recipesSchema = new mongoose.Schema({
     instructions: {
         type: [String]
     },
-    img:{
+    img: {
         type: String
     }
-    
 
-}, {timestamps: true})
+
+}, { timestamps: true })
 
 
 const Recipes = mongoose.model('Recipes', recipesSchema)
@@ -26,19 +26,18 @@ module.exports = Recipes
 
 
 const priscilla = ({
-    name: "Grilled Cheese",
-    ingredients: ["Bread", "Cheese", "Butter"],
-    totalTime: "10 mins",
-    instructions:
-        "Take bread, spread butter on both slices of bread, on one side, heat pan, place one slice of bread on pan, add cheese, place other slice of bread on top. Let side cook for 3 mins. Flip and toast for 3 mins. Once both sides are toasted, your cheesy goodness is good to go",
-    img:"https://natashaskitchen.com/wp-content/uploads/2021/08/Grilled-Cheese-Sandwich-3.jpg"
+    name: "Chicken & Veggies",
+    ingredients: ["Chicken", "Brussel Sprouts", "Microwaveable Sweet Potato", "Seasonings of your Choice"],
+    totalTime: "30 mins",
+    instructions: "Warm up your pan and season your chicken with salt and pepper and other seasonings you prefer. Pre-heat air fryer to 375 for your sprouts. Season your Brussel Sprouts with salt, pepper, oil and balsalmic vinegar. Toss and place in air fryer for 10 mins. Take Potato and microwave for time suggested. Once pan is heated, lightly oil pan and place chicken. Cook each side for 10 mins. Combine all cooked items and enjoy.",
+    img: "https://i.imgur.com/bl4hf32.jpeg"
 
 })
 const derek = ({
     name: "French Toast",
     ingredients: ["Bread", "Egg", "Butter", "Milk"],
     totalTime: "10 mins",
-    instructions: 
+    instructions:
         "Beat egg, vanilla and cinnamon in shallow dish with wire whisk. Stir in milk. Dip bread in egg mixture, turning to coat both sides evenly. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides. Serve with Easy Spiced Syrup (recipe follows), if desired. Voila, easy French toast."
 })
 
@@ -47,16 +46,16 @@ function main() {
     // await search()
     // Delete all data from the Company collection
     Recipes.deleteMany({}, (err, deletedResponse) => {
-        if(err) return console.log(err)
+        if (err) return console.log(err)
         // if(err) return res.send(err)
-        console.log(`${deletedResponse.deletedCount} number of recipes have deleted.`)
+        console.log(`${deletedResponse.deletedCount} number of companies have deleted.`)
 
-        Recipes.create(priscilla, (err, createdRecipe)=> {
-            if(err) return console.log(err)
+        Recipes.create(priscilla, (err, createdRecipe) => {
+            if (err) return console.log(err)
             console.log(`Created the ${createdRecipe}`)
-            
-            Recipes.create(derek, (err, createdRecipe)=> {
-                if(err) return console.log(err)
+
+            Recipes.create(derek, (err, createdRecipe) => {
+                if (err) return console.log(err)
                 console.log(`Created the ${createdRecipe}`)
             })
         })
