@@ -6,26 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyPEAsy Home Page</title>
-    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/home.css">
 </head>
 
 <body>
-    <div class="topNav">
-        <a href="/easypeasy">Home</a>
-        <a href="/easypeasy/recipe">Index</a>
-        <a href="/easypeasy/recipe/new">Post Recipes</a>
-        <a href="#signUp">Sign-Up</a>
+    <nav class="navbar navbar-light" style="background-color: #c7ffa9;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/easypeasy">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/easypeasy">Search Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/easypeasy/recipe">All Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/easypeasy/recipe/new">Post Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="#signUp">Sign-Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="homeHeader">
+        <h1>We make finding a recipe easyPEAsy</h1>
+        <h2>so lets see what you have in your pantry and find out whats cookin good lookin!</h2>
     </div>
-    <h1>We make finding a recipe EasyPEAsy!</h1>
+
+
     <div class="search-bar">
-        
         <form action="/easypeasy/recipe/result" method="POST">
-            <input id="search" type="search" name="ingredients" placeholder="Recipe Search">
-            <button type="submit">🍽🍽🍽</button>
+
+            <nav class="navbar navbar-light" style="background-color: none">
+                <div class="container mx-auto" style="width: 800px;">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" name="ingredients" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
         </form>
     </div>
-    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
-

@@ -14,8 +14,8 @@ const URI = "mongodb://127.0.0.1:27017/easypeasy"
 
 
 mongoose.connect(URI)
-mongoose.connection.on('connected',()=>{
-    console.log('connected to mongoDB: '+URI.split('/').pop())
+mongoose.connection.on('connected', () => {
+    console.log('connected to mongoDB: ' + URI.split('/').pop())
 })
 // mongoose.connect(URI, {}, () => console.log("mongoose connected!" + URI))
 
@@ -30,7 +30,7 @@ app.use('/views', express.static('views'))
 // ============================================
 //                   MIDDLEWARE
 // ============================================
-app.use(express.static("public"));
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 

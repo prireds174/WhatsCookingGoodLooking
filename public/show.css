@@ -1,0 +1,35 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background-color:  rgba(140, 216, 140, 0.872);
+}
+
+h1 {
+    padding: 25px;
+    font-size: 35px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px
+}
+
+#recipe-name {
+    font-size: 60px
+}
+
+.floated-image {
+    margin: 50px 50px;
+
+}
+
+.recipe-details{
+    padding: 10px;
+}
+
+
+.bottom {
+    padding: 15px;
+}

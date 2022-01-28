@@ -1,0 +1,10 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background-color:  rgba(140, 216, 140, 0.872);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
