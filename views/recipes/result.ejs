@@ -42,13 +42,13 @@
     <h1>List of Results!!</h1>
     <div>
         <ul>
-            <li>
-                <% for (let i=0; i< recipes.length; i++){%>
+            <% for (let i=0; i< recipes.length; i++){%>
+                <li>
                     <a href="/easypeasy/recipe/<%=recipes[i]._id%>">
                         <%=recipes[i].name%>
                     </a>
-                    <%} %>
-            </li>
+                </li>
+                <%} %>
         </ul>
     </div>
 

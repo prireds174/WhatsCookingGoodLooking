@@ -1,3 +1,4 @@
+const { type } = require('express/lib/response')
 const mongoose = require('mongoose')
 
 const recipesSchema = new mongoose.Schema({
@@ -10,7 +11,11 @@ const recipesSchema = new mongoose.Schema({
     },
     instructions: {
         type: [String]
+    },
+    img:{
+        type: String
     }
+    
 
 }, {timestamps: true})
 
@@ -25,8 +30,16 @@ const priscilla = ({
     ingredients: ["Bread", "Cheese", "Butter"],
     totalTime: "10 mins",
     instructions:
-        "Take bread, spread butter on both slices of bread, on one side, heat pan, place one slice of bread on pan, add cheese, place other slice of bread on top. Let side cook for 3 mins. Flip and toast for 3 mins. Once both sides are toasted, your cheesy goodness is good to go"
+        "Take bread, spread butter on both slices of bread, on one side, heat pan, place one slice of bread on pan, add cheese, place other slice of bread on top. Let side cook for 3 mins. Flip and toast for 3 mins. Once both sides are toasted, your cheesy goodness is good to go",
+    img:"https://natashaskitchen.com/wp-content/uploads/2021/08/Grilled-Cheese-Sandwich-3.jpg"
 
+})
+const derek = ({
+    name: "French Toast",
+    ingredients: ["Bread", "Egg", "Butter", "Milk"],
+    totalTime: "10 mins",
+    instructions: 
+        "Beat egg, vanilla and cinnamon in shallow dish with wire whisk. Stir in milk. Dip bread in egg mixture, turning to coat both sides evenly. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides. Serve with Easy Spiced Syrup (recipe follows), if desired. Voila, easy French toast."
 })
 
 function main() {
@@ -41,19 +54,14 @@ function main() {
         Recipes.create(priscilla, (err, createdRecipe)=> {
             if(err) return console.log(err)
             console.log(`Created the ${createdRecipe}`)
-
+            
+            Recipes.create(derek, (err, createdRecipe)=> {
+                if(err) return console.log(err)
+                console.log(`Created the ${createdRecipe}`)
+            })
         })
     })
 }
 main()
-// function search(x) {
-//     Recipes.find( 
-//         {ingredients: { "$in" : [x] }}, 
-//         "name", (err, docs) => {
-//         if(err) return console.log(err)
-//         console.log(docs)
-//     })
-// }
-// search("Cheese")
 
 
