@@ -51,7 +51,7 @@ app.get('/easypeasy', (req, res) => {
 })
 
 // ***************Start*Server*******************
-app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+app.listen(process.env.PORT || PORT, () => console.log(`Listening on ${PORT}`))
 
 
 // module.exports = Recipes
