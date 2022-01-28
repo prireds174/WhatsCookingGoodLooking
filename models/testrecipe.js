@@ -1,4 +1,4 @@
-const { type } = require('express/lib/response')
+
 const mongoose = require('mongoose')
 
 const recipesSchema = new mongoose.Schema({
@@ -102,6 +102,6 @@ function main() {
         })
     })
 }
-main()
+// main()
 
 
