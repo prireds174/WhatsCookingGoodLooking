@@ -1,10 +1,57 @@
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
     background-color:  rgba(140, 216, 140, 0.872);
     background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 250px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    padding: 25px;
+    font-size: 48px;
+    text-align: center;
+}
+
+h2 {
+    padding: 3px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+li {
+    padding: 10px;
+}
+
+.form-label {
+    font-size: 24px;
+}
+
+.container {
+    flex-direction: column;
+    justify-items: center;
+    max-width: 600px;
+}
+
+.nav-link:hover {
+    color: rgba(133, 159, 49, 0.978)
+}
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a:hover {
+    color:rgba(133, 159, 49, 0.978)
+}
+
+a:active {
+    color:black
 }
