@@ -4,14 +4,43 @@
 
 body {
     background-color:  rgba(140, 216, 140, 0.872);
-    background-image: url(https://i.imgur.com/XP6oz9x.png);
-    
 }
 
 h1{
     text-align: center;
+    padding: 10px;
 }
 
-h2 {
-    text-align: center;
+p {
+    padding: 35px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 45px;
+  }
+
+.nav-link:hover {
+    color: rgba(133, 159, 49, 0.978)
+}
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a:hover {
+    color:rgba(133, 159, 49, 0.978)
+}
+
+a:active {
+    color:black
 }

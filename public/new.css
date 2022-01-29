@@ -20,7 +20,7 @@ h2 {
     text-align: center;
 }
 
-a {
+li {
     padding: 10px;
 }
 
@@ -32,4 +32,26 @@ a {
     flex-direction: column;
     justify-items: center;
     max-width: 600px;
+}
+
+.nav-link:hover {
+    color: rgba(133, 159, 49, 0.978)
+}
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a:hover {
+    color:rgba(133, 159, 49, 0.978)
+}
+
+a:active {
+    color:black
 }

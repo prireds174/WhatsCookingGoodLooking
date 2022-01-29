@@ -52,6 +52,14 @@ app.get('/easypeasy', (req, res) => {
     res.render('home.ejs')
 })
 
+//***************About*Us*Route*********************
+app.get('/easypeasy/about', (req, res) => {
+    res.render('about.ejs')
+  })
+
+//***************404*Route*********************
+app.get('*', (req,res) => res.render('404.ejs'))
+
 // ***************Start*Server*******************
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 

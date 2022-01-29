@@ -17,7 +17,7 @@
     <nav class="navbar navbar-light" style="background-color: #c7ffa9;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/easypeasy">
-                <img src="https://i.imgur.com/XP6oz9x.png" alt="" width="75" height="65">
+                <img src="https://i.imgur.com/XP6oz9x.png" alt="" width="90" height="90">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,10 +40,12 @@
     </nav>
 
     <h1>Recipe Details</h1>
+
     <div class="recipe-details">
         <p id="recipe-name">
             <%= recipe.name %>
         </p>
+        <a class="editlink" href="/easypeasy/recipe/<%=recipe.id%>/edit">Edit this recipe</a>
         <p id="ingredients">
         <h2>Ingredients</h2>
         <%= recipe.ingredients %>
@@ -57,18 +59,15 @@
                     <%= recipe.instructions %>
                 </div>
                 <p>
-                    <img class="floated-image" src="<%=recipe.img%>" alt="image" width="350" height="400">
+                    <img class="floated-image" src="<%=recipe.img%>" alt="image" width="350" height="330">
                 </p>
     </div>
-    <div class="bottom">
-        <a href="/easypeasy/recipe/<%=recipe.id%>/edit">Edit this recipe</a>
-        <br>
 
-        <a href="/easypeasy/recipe">Recipe Index</a>
-
-    </div>
     <div>
         <ul class="nav fixed-bottom justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/easypeasy/recipe">All Recipes</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/easypeasy/recipe/new">Post a Recipe</a>
             </li>
@@ -76,7 +75,7 @@
                 <a class="nav-link" href="/easypeasy">Search</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About
+                <a class="nav-link" href="/easypeasy/about">About
                     Us
                 </a>
             </li>

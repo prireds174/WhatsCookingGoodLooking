@@ -8,4 +8,34 @@ body {
 
 h1 {
     text-align: center;
+    padding: 25px;
+    font-size: 45px;
 }
+
+ul.results {
+    list-style-type: none;
+    font-size: 30px;
+}
+
+.nav-link:hover {
+    color: rgba(133, 159, 49, 0.978)
+}
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a:hover {
+    color:rgba(133, 159, 49, 0.978)
+}
+
+a:active {
+    color:black
+}
+
