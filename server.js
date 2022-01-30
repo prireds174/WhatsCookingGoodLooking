@@ -11,6 +11,7 @@ const mongoose = require('mongoose')
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/easypeasy"
 
 
+
 mongoose.connect(MONGODB_URI)
 mongoose.connection.on('connected',()=>{
     console.log('connected to mongoDB: '+MONGODB_URI.split('/').pop())
