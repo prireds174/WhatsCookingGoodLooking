@@ -94,18 +94,18 @@ router.post('/result', (req, res) => {
     console.log("post result page!!!!!")
     
     Recipe.aggregate([
-        {
-          '$search': {
-            'index': 'default',
-            'text': {
-              'query': req.body.ingredients,
-              'path': {
-                'wildcard': '*'
+            {
+              '$search': {
+                'index': 'recipes',
+                'text': {
+                  'query': req.body.ingredients,
+                  'path': {
+                    'wildcard': '*'
+                  }
+                }
               }
             }
-          }
-        }
-      ], (err, foundFood)=>{
+          ], (err, foundFood)=>{
           if(err){
               res.send(err)
           } else {
