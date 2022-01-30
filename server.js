@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://easyAdmin:QU9dLy3PKoip2b5e@cluster0.vgkjq.mongodb.net/easypeasydb?retryWrites=true&w=majority"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/easypeasy"
 
 
 mongoose.connect(MONGODB_URI)
@@ -41,11 +41,19 @@ app.use('/easypeasy/recipe', recipesController)
 // ============================================
 
 // ==============================================
-
+// app.get('*',(req,res)=>res.render('404'))
 // ***************Home*Route*********************
+app.get('/easypeasy/about', (req,res)=>{
+    res.render('about.ejs')
+})
+
 app.get('/', (req,res)=>{
     res.redirect('/easypeasy')
 })
+
+
+// app.get('*',(req,res)=>res.render('404'))
+
 app.get('/easypeasy', (req, res) => {
     
     res.render('home.ejs')

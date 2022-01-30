@@ -8,7 +8,11 @@ const Recipe = require('../models/recipes.js');
 
 // ================================================
 
+router.get('/about', (req,res)=>{
+    res.render('about.ejs')
+})
 // ***************Index*Route**********************
+
 router.get('/', (req, res) => {
     Recipe.find({}, (err, foundRecipe) => {
         console.log(foundRecipe)
@@ -100,6 +104,8 @@ router.post('/result', (req, res) => {
     })
 
 })
+
+// =================About========================
 
 
 module.exports = router;
