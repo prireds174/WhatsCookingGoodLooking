@@ -4,19 +4,19 @@
 const express = require('express');
 const router = express.Router();
 
-const Recipes = require('../models/testrecipe');
+const Recipe = require('../models/recipes.js');
 
 // ================================================
 
 // ***************Index*Route**********************
 router.get('/', (req, res) => {
-    Recipes.find({}, (err, foundRecipe) => {
+    Recipe.find({}, (err, foundRecipe) => {
         console.log(foundRecipe)
         res.render('recipes/index.ejs', {
             recipes: foundRecipe
         })
     })
-    // res.send('easypeasy right?')
+    
 })
 
 // ================================================
@@ -28,13 +28,12 @@ router.get('/result', (req, res) => {
 // ================================================
 // ***************New*Route************************
 router.get('/new', (req, res) => {
-    //res.send('our new recipes!!!🥗')
     res.render('recipes/new.ejs')
 })
 // ***************Show*Route***********************
 router.get('/:id', (req, res) => {
     const id = req.params.id
-    Recipes.findById(req.params.id, (err, foundRecipe) => {
+    Recipe.findById(req.params.id, (err, foundRecipe) => {
         if (err) {
             res.send(err)
         } else {
@@ -46,7 +45,7 @@ router.get('/:id', (req, res) => {
 })
 // ***************Edit*Route***********************
 router.get('/:id/edit', (req, res) => {
-    Recipes.findById(req.params.id, (err, recipeToEdit) => {
+    Recipe.findById(req.params.id, (err, recipeToEdit) => {
         if (err) {
             res.send(err)
         } else {
@@ -55,13 +54,11 @@ router.get('/:id/edit', (req, res) => {
             });
         }
     })
-    //res.send('edit my recipes!!')
 })
 
 // ***************Create*Route*********************
 router.post('/', (req, res) => {
-    //res.send('Create new recipe!')
-    Recipes.create(req.body, (err, createdRecipe) => {
+    Recipe.create(req.body, (err, createdRecipe) => {
         res.redirect('/easypeasy/recipe')
         console.log(err)
 
@@ -71,8 +68,7 @@ router.post('/', (req, res) => {
 
 // ***************Update*Route*********************
 router.put('/:id', (req, res) => {
-    // res.send('Update our new recipe!!')
-    Recipes.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
+    Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
         if (err) {
             res.send(err)
         }
@@ -86,7 +82,7 @@ router.delete('/:id/', (req, res) => {
         console.log(deleteMsg)
         res.redirect('/easypeasy/recipe')
     }
-    Recipes.findByIdAndDelete({ _id: req.params.id }, deleteRecipe)
+    Recipe.findByIdAndDelete({ _id: req.params.id }, deleteRecipe)
 })
 
 // ================================================
@@ -94,7 +90,7 @@ router.delete('/:id/', (req, res) => {
 // ***************search*Route*********************
 router.post('/result', (req, res) => {
     console.log("post result page!!!!!")
-    Recipes.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
+    Recipe.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
         if (err) {
             console.log(err)
         } else {
