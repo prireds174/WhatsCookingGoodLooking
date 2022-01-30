@@ -5,12 +5,10 @@ const express = require('express')
 const app = express()
 const recipesController = require('./controllers/recipes.js')
 const PORT = process.env.PORT || 8000
-//const Recipe = require('./models/recipes')
-// const Recipes = require('./models/Testrecipe')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/easypeasy"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://easyAdmin:QU9dLy3PKoip2b5e@cluster0.vgkjq.mongodb.net/easypeasydb?retryWrites=true&w=majority"
 
 
 mongoose.connect(MONGODB_URI)
@@ -45,6 +43,9 @@ app.use('/easypeasy/recipe', recipesController)
 // ==============================================
 
 // ***************Home*Route*********************
+app.get('/', (req,res)=>{
+    res.redirect('/easypeasy')
+})
 app.get('/easypeasy', (req, res) => {
     
     res.render('home.ejs')
@@ -54,4 +55,3 @@ app.get('/easypeasy', (req, res) => {
 app.listen(process.env.PORT || PORT, () => console.log(`Listening on ${PORT}`))
 
 
-// module.exports = Recipes
