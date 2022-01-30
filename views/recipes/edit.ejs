@@ -69,10 +69,10 @@
         <div class="button">
             <button class="btn"><i class="fa fa-save"></i></button>
         </div>
-        <div action="/easypeasy/recipe/<%= recipe._id %>?_method=Delete" method="POST">
-            <button class="btn"><i class="fa fa-trash"></i></button>
-        </div>
 
+    </form>
+    <form action="/easypeasy/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button class="btn"><i class="fa fa-trash"></i></button>
     </form>
 
     <ul class="nav fixed-bottom justify-content-center">
