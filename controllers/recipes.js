@@ -8,9 +8,7 @@ const Recipe = require('../models/recipes.js');
 
 // ================================================
 
-router.get('/about', (req,res)=>{
-    res.render('about.ejs')
-})
+
 // ***************Index*Route**********************
 
 router.get('/', (req, res) => {
@@ -94,14 +92,33 @@ router.delete('/:id/', (req, res) => {
 // ***************search*Route*********************
 router.post('/result', (req, res) => {
     console.log("post result page!!!!!")
-    Recipe.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(foodName)
-            res.render('recipes/result.ejs', { recipes: foodName })
+    Recipe.aggregate([
+        {
+          '$search': {
+            'index': 'default',
+            'text': {
+              'query': req.body.ingredients,
+              'path': {
+                'wildcard': '*'
+              }
+            }
+          }
         }
-    })
+      ], (err, foundFood)=>{
+          if(err){
+              res.send(err)
+          } else {
+            res.render('recipes/result.ejs', {recipes: foundFood})
+          }
+      })
+    // Recipe.find({ ingredients: req.body.ingredients }, "name", (err, foodName) => {
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         console.log(foodName)
+    //         res.render('recipes/result.ejs', { recipes: foodName })
+    //     }
+    // })
 
 })
 
