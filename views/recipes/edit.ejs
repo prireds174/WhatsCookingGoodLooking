@@ -43,27 +43,27 @@
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Dish Name</label>
-            <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Dish Name">
+            <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Dish Name" value="<%=recipe.name%>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ingredients</label>
             <input type="text" class="form-control" name="ingredients" id="exampleFormControlInput1"
-                placeholder="Ingredients">
+                placeholder="Ingredients" value="<%=recipe.ingredients%>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Cook Time</label>
             <input type="text" name="totalTime" class="form-control" id="exampleFormControlInput1"
-                placeholder="Total Cook Time">
+                placeholder="Total Cook Time" value="<%=recipe.totalTime%>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Instructions</label>
             <textarea class="form-control" id="recipeInstruction" name="instructions" placeholder="How to Prepare"
-                rows="3"></textarea>
+                rows="3" value="<%=recipe.instructions%>"></textarea>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Image</label>
             <input type="text" name="img" class="form-control" id="exampleFormControlInput1"
-                placeholder="enter image URL">
+                placeholder="enter image URL" value="<%=recipe.img%>">
         </div>
 
         <div class="button">

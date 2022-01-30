@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Recipes = require('../models/Testrecipe');
+const Recipes = require('../models/testrecipe');
 
 // ================================================
 

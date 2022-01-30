@@ -4,21 +4,19 @@
 const express = require('express')
 const app = express()
 const recipesController = require('./controllers/recipes.js')
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 //const Recipe = require('./models/recipes')
 // const Recipes = require('./models/Testrecipe')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
-const URI = "mongodb://127.0.0.1:27017/easypeasy"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/easypeasy"
 
 
-mongoose.connect(URI)
-mongoose.connection.on('connected', () => {
-    console.log('connected to mongoDB: ' + URI.split('/').pop())
+mongoose.connect(MONGODB_URI)
+mongoose.connection.on('connected',()=>{
+    console.log('connected to mongoDB: '+MONGODB_URI.split('/').pop())
 })
-// mongoose.connect(URI, {}, () => console.log("mongoose connected!" + URI))
-
 
 // ============================================
 //                   CONFIGURATION
@@ -30,7 +28,7 @@ app.use('/views', express.static('views'))
 // ============================================
 //                   MIDDLEWARE
 // ============================================
-app.use(express.static('public'))
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
@@ -52,16 +50,8 @@ app.get('/easypeasy', (req, res) => {
     res.render('home.ejs')
 })
 
-//***************About*Us*Route*********************
-app.get('/easypeasy/about', (req, res) => {
-    res.render('about.ejs')
-  })
-
-//***************404*Route*********************
-app.get('*', (req,res) => res.render('404.ejs'))
-
 // ***************Start*Server*******************
-app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+app.listen(process.env.PORT || PORT, () => console.log(`Listening on ${PORT}`))
 
 
 // module.exports = Recipes
