@@ -6,27 +6,32 @@ body {
     background-color:  rgba(140, 216, 140, 0.872);
 }
 
-h1{
+h1 {
+    padding: 25px;
+    font-size: 35px;
     text-align: center;
+}
+
+h2 {
+    font-size: 25px
+}
+
+#recipe-name {
+    font-size: 60px
+}
+
+.floated-image {
+    margin: 50px 50px;
+
+}
+
+.recipe-details{
     padding: 10px;
 }
-
-p {
-    padding: 35px;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-bottom: 45px;
-  }
 
 .nav-link:hover {
     color: rgba(133, 159, 49, 0.978)
 }
-
 
 a:link {
     color: white;

@@ -1,0 +1,86 @@
+const priscilla = ({
+    name: "Grilled Cheese",
+    ingredients: "Bread, Cheese, Butter",
+    totalTime: "10 mins",
+    instructions:
+        "Take bread, spread butter on both slices of bread, on one side, heat pan, place one slice of bread on pan, add cheese, place other slice of bread on top. Let side cook for 3 mins. Flip and toast for 3 mins. Once both sides are toasted, your cheesy goodness is good to go"
+
+})
+
+function main() {
+    // Your code here!
+    console.log("Main function is running")
+
+    // Delete all data from the Company collection
+    Recipes.deleteMany({}, (err, deletedResponse) => {
+        if(err) return console.log(err)
+        // if(err) return res.send(err)
+        console.log(`${deletedResponse.deletedCount} number of companies have deleted.`)
+
+        Recipes.create(priscilla, (err, createdRecipe)=> {
+            if(err) return console.log(err)
+            console.log(`Created the ${createdRecipe}`)
+            }
+        )
+    }
+)
+}
+main()
+
+ <div class="topNav">
+        <a href="/easypeasy">Home</a>
+        <a href="/easypeasy/recipe">Index</a>
+        <a href="/easypeasy/recipe/new">Post Recipes</a>
+        <a href="#signUp">Sign-Up</a>
+    </div>
+
+       <nav class="navbar navbar-light" style="background-color: c7ffa9;">
+        <div class="container">
+            <div class="mx-auto" style="width: 500px;">
+                <form class="d-flex">
+                    <form action="/easypeasy/recipe/result" method="POST">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<input id="search" type="search" name="ingredients" placeholder="Recipe Search">
+            <button type="submit">🍽🍽🍽</button>
+
+            <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+
+
+
+<p>Dish Name</p>
+
+        <input type="text" name="name" placeholder="enter name here">
+
+        <p>Ingredients</p>
+
+        <input type="text" name="ingredients" placeholder="enter ingredient here">
+
+        <p>Cook Time </p>
+
+        <input type="text" name="totalTime" placeholder="enter total time here">
+
+        <p>Instructions</p>
+
+        <textarea rows="6" cols="60" id="recipeInstruction" name="instructions"
+            placeholder="enter your instructions"></textarea>
+
+        <p>Image:</p>
+
+        <input type="text" name="img" placeholder="enter image URL">
+
+        <br>
+        <input type="submit" value="New Recipes">

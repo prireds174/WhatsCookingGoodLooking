@@ -1,0 +1,68 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background-color:  rgba(140, 216, 140, 0.872);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+h1 {
+    padding: 25px;
+    font-size: 35px;
+    text-align: center;
+}
+
+li {
+    padding: 10px;
+}
+
+.form-label {
+    font-size: 24px;
+}
+
+.container {
+    flex-direction: column;
+    justify-items: center;
+    max-width: 600px;
+}  
+
+.btn {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    font-size: 20px;
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+  }
+  
+  /* Darker background on mouse-over */
+.btn:hover {
+    background-color: rgb(255, 5, 5);
+}
+
+.nav-link:hover {
+    color: rgba(133, 159, 49, 0.978)
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(132, 65, 107, 0.907)
+}
+
+a:hover {
+    color:rgba(133, 159, 49, 0.978)
+}
+
+a:active {
+    color:black
+}
+

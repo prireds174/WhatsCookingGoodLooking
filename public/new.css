@@ -1,27 +1,38 @@
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
     background-color:  rgba(140, 216, 140, 0.872);
+    background-position: 50% 50%;
+    padding-bottom: 50px;
 }
 
-h1{
+h1 {
+    padding: 25px;
+    font-size: 48px;
     text-align: center;
+}
+
+h2 {
+    padding: 3px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+li {
     padding: 10px;
 }
 
-p {
-    padding: 35px;
+.form-label {
+    font-size: 24px;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-bottom: 45px;
-  }
+.container {
+    flex-direction: column;
+    justify-items: center;
+    max-width: 600px;
+}
 
 .nav-link:hover {
     color: rgba(133, 159, 49, 0.978)
