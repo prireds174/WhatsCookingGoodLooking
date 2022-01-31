@@ -1,5 +1,6 @@
 # easyPEAsy
 What's Cooking Good Looking!
+[Live demo of our APP](https://polar-garden-31604.herokuapp.com/easypeasy)
 
 ## Description:
 
